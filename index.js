@@ -1,0 +1,1 @@
+console.log("This is inside of index.js");
