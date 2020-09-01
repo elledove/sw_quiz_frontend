@@ -2,9 +2,11 @@ const questionsurl = "http://localhost:3000/api/questions"
 const themesurl = "http://localhost:3000/api/themes"
 
 
+
 document.addEventListener('DOMContentLoaded',() => {
    //getQuestions();
     getThemes(event);
+    
     //startGame(event);
 //     console.log("Dom Loaded successfully")
 //     fetch(questionsurl)
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded',() => {
          </div>
          <br></br>`;
          document.querySelector('#questions-container').innerHTML += questionlist;
-
+           
       })
       
 
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
  }
 
-
+//This function should be showing the themes buttons that are fetched from the api I created
 
  function getThemes(elem) {
   fetch(themesurl)
@@ -56,32 +58,31 @@ document.addEventListener('DOMContentLoaded',() => {
           document.querySelector("#themes-container").innerHTML += themesOptions;
       })
     console.log("still inside themes")
-    let btn =document.getElementById('themes-container').getElementsByTagName("button")[1]
+    const btn =document.getElementById('themes-container').getElementsByTagName("button")[1]
     const themebox = document.getElementById('themes-container');
+    const quesbox = document.getElementById('questions-container');
     console.log(btn)
-    btn.onclick = () => {console.log("Button clicked"); themebox.style.visibility = "hidden"; getQuestions()}
-
-
+    btn.onclick = () => {console.log("Button clicked"); themebox.style.visibility = "hidden"; getQuestions()}    
+    
     
   })
-
- }
-
- function startGame(elem) {
-    const personbtn = document.getElementsByTagName('button')[0];
-    personbtn.addEventListener('click',)
-     console.log("inside start game")
-    //  console.log(personbtn)
-    //  if(elem.target == personbtn) {
-    //       console.log(elem.target)
-    //     themebox.style.visibility = "hidden";
-    //   }
   
 
-
  }
 
-
+ function filterQuestions() {
+    
+//    fetch(questionsurl)
+//    .then(response => response.json())
+//    .then(questions => console.log(questions))
+   
+   console.log("WHHY")
+   console.log(document.getElementsByTagName('button')[3])
+    
+   
+ }
+ filterQuestions();
+ 
 
 
 
